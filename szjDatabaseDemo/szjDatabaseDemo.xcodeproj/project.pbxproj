@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3845DBDA1EA88BFB005F481B /* 111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3845DBD91EA88BFB005F481B /* 111.jpg */; };
+		3845DBDC1EA8917C005F481B /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 3845DBDB1EA8917C005F481B /* Icon-76.png */; };
 		387436841EA6FC9F008710A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 387436831EA6FC9F008710A6 /* main.m */; };
 		387436871EA6FC9F008710A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 387436861EA6FC9F008710A6 /* AppDelegate.m */; };
 		3874368A1EA6FC9F008710A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387436891EA6FC9F008710A6 /* ViewController.m */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3845DBD91EA88BFB005F481B /* 111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 111.jpg; sourceTree = "<group>"; };
+		3845DBDB1EA8917C005F481B /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		3874367F1EA6FC9F008710A6 /* szjDatabaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = szjDatabaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387436831EA6FC9F008710A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		387436851EA6FC9F008710A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		387436811EA6FC9F008710A6 /* szjDatabaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3845DBD91EA88BFB005F481B /* 111.jpg */,
+				3845DBDB1EA8917C005F481B /* Icon-76.png */,
 				387436851EA6FC9F008710A6 /* AppDelegate.h */,
 				387436861EA6FC9F008710A6 /* AppDelegate.m */,
 				387436881EA6FC9F008710A6 /* ViewController.h */,
@@ -251,7 +257,9 @@
 			files = (
 				387436921EA6FC9F008710A6 /* LaunchScreen.storyboard in Resources */,
 				3874368F1EA6FC9F008710A6 /* Assets.xcassets in Resources */,
+				3845DBDC1EA8917C005F481B /* Icon-76.png in Resources */,
 				3874368D1EA6FC9F008710A6 /* Main.storyboard in Resources */,
+				3845DBDA1EA88BFB005F481B /* 111.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +524,7 @@
 				387436AE1EA6FC9F008710A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		387436AF1EA6FC9F008710A6 /* Build configuration list for PBXNativeTarget "szjDatabaseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +533,7 @@
 				387436B11EA6FC9F008710A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		387436B21EA6FC9F008710A6 /* Build configuration list for PBXNativeTarget "szjDatabaseDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +542,7 @@
 				387436B41EA6FC9F008710A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

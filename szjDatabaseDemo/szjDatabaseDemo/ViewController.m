@@ -17,7 +17,15 @@
 	UILabel * label2;
 	
 	UIView * view1;
+	
+	UIView * view2;
+
+	
 }
+
+@property(nonatomic,strong)UIImageView * jImageView;
+@property(nonatomic,assign)BOOL imgFlag;
+@property(nonatomic,assign)BOOL tangFlag;
 
 @end
 
@@ -46,11 +54,104 @@
 	[self.view addSubview:view1];
 	
 	
+	view2 = [[UIView alloc] initWithFrame:CGRectMake(100, 300, 40, 40)];
+	view2.backgroundColor = [UIColor greenColor];
+	[self.view addSubview:view2];
+
+	UIButton * btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
+	btn2.frame = CGRectMake(100, 300, 40, 40);
+	[btn2 setTitle:@"转牌" forState:UIControlStateNormal];
+	[btn2 addTarget:self action:@selector(Click2) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:btn2];
+
+	
+	self.jImageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 400, 120, 80)];
+	self.jImageView.backgroundColor = [UIColor orangeColor];
+	self.jImageView.image = [UIImage imageNamed:@"111.jpg"];
+	[self.view addSubview:self.jImageView];
 }
 - (void)Click
 {
 	[self shakeAnimationForView:view1];
+	
+	view2.transform = CGAffineTransformIdentity;//清空所有的设置的transform
+	
+	[self szjTanhuang];
 }
+
+
+// 弹簧效果
+- (void)szjTanhuang
+{
+	// usingSpringWithDamping: 速度衰减比例 取值0~1，值越低震动越强
+	//initialSpringVelocity: 初始化速度 值越高则物品速度越高
+	[UIView animateWithDuration:0.1 delay:0. usingSpringWithDamping:0.3 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+		
+		if (!_tangFlag)
+		{
+			view2.center = self.view.center;
+			_tangFlag = YES;
+		}else
+		{
+			//view2.center = self.view.center;
+			//view2 = [[UIView alloc] initWithFrame:CGRectMake(100, 300, 40, 40)];
+			view2.frame = CGRectMake(100, 300, 40, 40);
+			_tangFlag = NO;
+		}
+		
+	} completion:^(BOOL finished) {
+		
+	}];
+
+}
+
+- (void)Click2
+{
+	
+	//缩放
+//	[UIView animateWithDuration:2. animations:^{
+//		
+//		//view2.transform = CGAffineTransformScale(view2.transform, 1.5, 1.5);
+//		view2.transform = CGAffineTransformRotate(view2.transform, M_PI);
+//		//view2.transform = CGAffineTransformMakeRotation(M_PI);//只会走一次
+//	} completion:^(BOOL finished) {
+//		NSLog(@"sssss");
+//	}];
+	
+
+	
+	/*
+	 UIViewAnimationOptionTransitionFlipFromLeft    = 1 << 20,
+	 UIViewAnimationOptionTransitionFlipFromRight   = 2 << 20,
+	 UIViewAnimationOptionTransitionCurlUp          = 3 << 20,
+	 UIViewAnimationOptionTransitionCurlDown        = 4 << 20,
+	 UIViewAnimationOptionTransitionCrossDissolve   = 5 << 20,
+	 UIViewAnimationOptionTransitionFlipFromTop     = 6 << 20,
+	 UIViewAnimationOptionTransitionFlipFromBottom  = 7 << 20,
+
+	 */
+//翻牌
+	[UIView transitionWithView:_jImageView duration:0.2 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+		[self filcard];
+	} completion:^(BOOL finished) {
+		
+	}];
+	
+}
+
+- (void)filcard
+{
+	if (_imgFlag)
+	{
+		self.jImageView.image = [UIImage imageNamed:@"111.jpg"];
+		_imgFlag = NO;
+	}else
+	{
+		self.jImageView.image = [UIImage imageNamed:@"Icon-76"];
+		_imgFlag = YES;
+	}
+}
+
 
 - (void)createMySegmentControl
 {
@@ -80,7 +181,7 @@
 	[bkView addSubview:con2];
 	
 	label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 66, 26)];
-	label1.textColor = [UIColor whiteColor];
+	label1.textColor = [UIColor yellowColor];
 	label1.text = @"左边";
 	label1.font = [UIFont systemFontOfSize:17 weight:3];
 	label1.textAlignment = NSTextAlignmentCenter;
@@ -214,6 +315,8 @@
 	[viewLayer addAnimation:animation forKey:nil];
 	
 }
+
+
 
 
 
